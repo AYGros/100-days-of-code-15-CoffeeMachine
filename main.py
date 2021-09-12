@@ -60,7 +60,7 @@ while need_order:
     print("Hello, this is your coffee machine.")
     order = input("What would you like? (espresso/latte/cappuccino). Or enter 'report' to check resources: ").lower()
     need_order = False
-    print(order)
+    print(f"You ordered {order}")
 
     # TODO: 2. Print report of all coffee machine resources
 
@@ -68,8 +68,11 @@ while need_order:
         report()
         need_order = True
     elif order != "espresso" and order !="latte" and order !="cappuccino":
-        print("invalid input")
-        need_order = True
+        off = input("Invalid input. To switch me off type 'off', to try again hit enter ")
+        if off == "off":
+            need_order = False
+        else:
+            need_order = True
     else:
         for ingredient in (MENU[order]["ingredients"]):
             if MENU[order]["ingredients"][ingredient] > resources[ingredient]:

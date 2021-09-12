@@ -58,7 +58,7 @@ def make_coffee(order, resources):
 while need_order:
     sufficient_resources = True
     print("Hello, this is your coffee machine.")
-    order = input("What would you like? (espresso/latte/cappuccino): ").lower()
+    order = input("What would you like? (espresso/latte/cappuccino). Or enter 'report' to check resources: ").lower()
     need_order = False
     print(order)
 
